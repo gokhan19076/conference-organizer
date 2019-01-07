@@ -1,19 +1,26 @@
 package com.cinibulak.conferenceorganizer.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Track {
 
+    @JsonIgnore
     private final int MORNING_SESSION_TOTAL_DURATION = 180;
+    @JsonIgnore
     private final int AFTERNOON_SESSION_TOTAL_DURATION = 240;
 
     private String name;
     private List<Event> morningEventList;
     private List<Event> afternoonEventList;
 
-    public Track() {
+    public Track(String name) {
+        this.name = name;
         this.morningEventList = new ArrayList<>();
         this.afternoonEventList = new ArrayList<>();
     }

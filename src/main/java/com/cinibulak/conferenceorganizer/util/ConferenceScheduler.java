@@ -27,7 +27,8 @@ public class ConferenceScheduler {
             }
 
             if (!isEventScheduled) {
-                Track track = new Track();
+
+                Track track = new Track("Track " + (trackList.size() + 1));
                 track.addEvent(event);
                 trackList.add(track);
             }
