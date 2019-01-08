@@ -21,7 +21,7 @@ public class ConferenceOrganizerService {
     private final ConferenceScheduler conferenceScheduler;
 
     public void createConference(String requestBody) {
-        log.info("==> ", requestBody);
+        log.info("==>requestBody:{}", requestBody);
 
         List<Event> eventList = conferenceParser.parse(requestBody);
         log.info("==> Length: {}", eventList.size());
